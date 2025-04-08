@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica 8</title>
+</head>
+<body>
+
+
+
+
+	<p id="saludo"></p>
+
+
+	<p id="idPar"></p>
+
+    <script>
+    	//Ejercicio1
+        function saludoPersonalizado(nombre, edad) {
+            return `Hola ${nombre}, tienes ${edad} años.`;
+        }
+
+        document.getElementById('saludo').innerHTML = saludoPersonalizado("María", 25);
+
+
+        //Ejercicio 2
+        function esPar(numero){
+        	if(numero%2 == 0){
+        		return "es Par";
+        	}
+
+        	return "es impar";
+        }
+
+        document.getElementById('idPar').innerHTML = esPar(513);
+
+        //Ejercicio 3
+
+
+        const numeroGrande = 9007199254740991n;  // El número más grande que no puede manejarse con Number
+        const otroNumeroGrande = 10000000000000000n;
+
+        // Mostrar los valores en la consola
+        console.log("numero Grande:", numeroGrande);
+        console.log("otro Numero Grande:", otroNumeroGrande);
+        console.log("Tipo de numeroGrande:", typeof numeroGrande);
+    </script>
+
+</body>
+</html>

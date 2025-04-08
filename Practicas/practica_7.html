@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica 7</title>
+</head>
+<body>
+	<h1>Practica 7</h1>
+
+	<p id="idLeon">Animal </p>
+
+	<p id="idPerro">Animal</p>
+
+
+	<button onclick="cambiarTexto()">Boton</button>
+
+	<br>
+
+	<p id="idTexto">Texto a cambiar con el boton</p>
+
+	<script type="text/javascript">
+		let leon = {
+			nombre: "Leon",
+			tipo: "Mamifero",
+			Dieta: "Carnivoro",
+			rugir: function(){console.log("Rugido")}
+		};
+
+		document.getElementById("idLeon").innerHTML = leon.nombre + ' ' + leon.tipo + ' ' +leon.Dieta;
+
+
+		//dfvd
+		function Animal(nombre, tipo, dieta){
+			this.nombre = nombre;
+			this.tipo = tipo;
+			this.dieta = dieta;
+		}
+
+		const perro = new Animal("Perro","Mamifero","Carnivero");
+
+		document.getElementById("idPerro").innerHTML = perro.nombre + ' ' + perro.tipo + ' ' +perro.dieta;
+
+
+		
+	</script>
+
+	<script type="text/javascript">
+		function cambiarTexto(){
+			document.getElementById("idTexto").innerHTML = "Texto Cambiado";
+		}
+	</script>
+</body>
+</html>
