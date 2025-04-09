@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica 10</title>
+</head>
+<body>
+
+	<h1>Practica 10</h1>
+
+	<p id="id1"></p>
+
+	<h2>Esta en la lista?</h2>
+	<input type="text" id="nombreBuscado" placeholder="Ingresa un nombre">
+	<button onclick="buscarEstudiante()">Buscar</button>
+
+	<p id="idRespuestaBusqueda"></p>
+
+
+	<p id="idOrdenado"></p>
+
+
+	<script type="text/javascript">
+
+		let lista = ["Juan","María","Ana","Jose","Jesus"];
+
+		function buscarEstudiante(){
+			let estudiante = document.getElementById("nombreBuscado").value.trim();
+
+
+			if(lista.includes(estudiante)){
+				document.getElementById("idRespuestaBusqueda").innerHTML = estudiante+" si esta en la lista";
+			}else{
+				document.getElementById("idRespuestaBusqueda").innerHTML = estudiante+ " NO esta en la lista";
+			}
+		}
+
+		
+
+		document.getElementById("id1").innerHTML = lista.toString();
+
+		lista.sort();
+
+		document.getElementById("idOrdenado").innerHTML = lista.toString();
+
+
+	</script>
+
+</body>
+</html>
