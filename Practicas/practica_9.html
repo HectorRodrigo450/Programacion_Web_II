@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica 9</title>
+</head>
+<body>
+
+
+	<input type="text" id="numeroInput">
+    <button onclick="analizarNumero()">Analizar</button>
+
+    <p id="idResultado"></p>
+
+    <<br>
+
+    <p id="idPrimerUltimo">primer y ultimo valor</p>
+
+    <p id="idSuma">Suma</p>
+
+    <p id="idArregloFinal">Arreglo Final</p>
+
+	<script type="text/javascript">
+
+		function analizarNumero() {
+            const input = document.getElementById('numeroInput').value;
+            let resultado='';
+
+            const numero = Number(input);
+            if(numero.toString() == "NaN"){
+            	document.getElementById("idResultado").innerHTML = "Es NaN";
+            	return;
+
+            }else{
+            	document.getElementById("idResultado").innerHTML = "No es NaN ";
+            }
+
+            if(numero > Number.MAX_SAFE_INTEGER){
+            	document.getElementById("idResultado").innerHTML = "Numero es mayor que MAX SAFE INTEGER";
+            }
+            if(numero < Number.MIN_SAFE_INTEGER){
+				document.getElementById("idResultado").innerHTML = "Numero es menor que MIN SAFE INTEGER";            	
+            }
+
+            if(numero < Number.MIN_VALUE){
+            	document.getElementById("idResultado").innerHTML = "Numero es menor que MAX VALUE";
+            }
+
+        }
+
+        //Ejercicio 2
+        function array(){
+        	let arreglo = [10,23,43,22,56];
+
+        	document.getElementById("idPrimerUltimo").innerHTML = "Primer valor del arreglo "+arreglo[0] +
+        														" Ultimo valor del arreglo "+arreglo[4];
+        	let suma = 0;
+        	for(let i = 0; i < arreglo.length;i++){
+        		suma += arreglo[i];
+        	}
+
+        	document.getElementById("idSuma").innerHTML = "La suma de todo el arreglo es " + suma;
+        	arreglo.push(suma);
+
+        	document.getElementById("idArregloFinal").innerHTML = "El arreglo es " + arreglo.toString();
+
+        }
+
+        //Ejercicio 3
+
+        function metodo(){
+        	let numero = 334;
+
+        	if(Number.isInteger(numero)){
+        		console.log("Es entero");
+        	}else{
+        		console.log("NO es entero");
+        	}
+
+        	console.log(numero.toFixed(2));
+        	console.log(numero.toExponential(3));
+        }
+
+
+
+        array();
+        metodo();
+		
+	</script>
+
+</body>
+</html>
